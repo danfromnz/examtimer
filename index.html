@@ -1,0 +1,679 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c93333;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 <!--\
+\'a0 \'a0 University of Sydney Examination Timer v4.5.1\
+\'a0 \'a0 Created by Joshua Lee (joshua.lee@sydney.edu.au)\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 This app is intended for use by University staff only.\
+\'a0 \'a0 If technical support is required please contact the Exams Office in the first instance.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 REVISION HISTORY\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 v4.5.1 - 12th November 2020\
+\'a0 \'a0 \'a0 \'a0 Released a large part of the source code for the timer under the MIT license.\
+\'a0 \'a0 \'a0 \'a0 The open-source components of this application are now available at\'a0{\field{\*\fldinst{HYPERLINK "https://github.com/jfslee/examtimer"}}{\fldrslt \cf4 \ul \ulc4 \strokec4 https://github.com/jfslee/examtimer}}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 v4.5 - 6th July 2019\
+\'a0 \'a0 \'a0 - Swapped countdown timer and clock on main timer views\
+\'a0 \'a0 \'a0 - This was in response to a USYD Rants post:\'a0{\field{\*\fldinst{HYPERLINK "https://www.facebook.com/permalink.php?story_fbid=1271236323051797&id=365660320276073"}}{\fldrslt \cf4 \ul \ulc4 \strokec4 https://www.facebook.com/permalink.php?story_fbid=1271236323051797&id=365660320276073}}\
+\'a0 \'a0 \'a0 - You can't say we don't listen to feedback!\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 v4.4.2 - 26th June 2018\
+\'a0 \'a0 \'a0 - If exam has commenced, always confirm prior to any refresh operation (to avoid losing content)\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 v4.4.1 - 19th June 2018\
+\'a0 \'a0 \'a0 - Added a hook to auto-update URL whenever exam info is edited.\
+\'a0 \'a0 \'a0 \'a0 This means that if a refresh is triggered, any changes made will be repopulated back to the setup screen.\
+\'a0 \'a0 \'a0 - Added alt text to the University of Sydney logo in the upper left to notify the user that clicking will return to the setup screen.\
+\'a0 \'a0 \'a0 - If for some reason the window loses its full-screen status, double-clicking anywhere will restore full screen mode.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 v4.4 - 9th May 2018\
+\'a0 \'a0 \'a0 - Initial release to University website\
+\'a0 \'a0 \'a0 - Previous versions were hosted externally and not officially supported\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 MIT License\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 Copyright (c) 2020 Joshua Lee (joshua.lee@sydney.edu.au)\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 Permission is hereby granted, free of charge, to any person obtaining a copy\
+\'a0 \'a0 of this software and associated documentation files (the "Software"), to deal\
+\'a0 \'a0 in the Software without restriction, including without limitation the rights\
+\'a0 \'a0 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\
+\'a0 \'a0 copies of the Software, and to permit persons to whom the Software is\
+\'a0 \'a0 furnished to do so, subject to the following conditions:\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 The above copyright notice and this permission notice shall be included in all\
+\'a0 \'a0 copies or substantial portions of the Software.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\
+\'a0 \'a0 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\
+\'a0 \'a0 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\
+\'a0 \'a0 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\
+\'a0 \'a0 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\
+\'a0 \'a0 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\
+\'a0 \'a0 SOFTWARE.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 -->\
+<html>\
+\'a0 <head>\
+\'a0 \'a0 <title>Examination Timer</title>\
+\'a0 \'a0 <style>\
+\'a0 \'a0 \'a0 @font-face \{\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 @font-face \{\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif;\
+\'a0 \'a0 \'a0 \'a0 font-weight: bold;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 body \{\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif;\
+\'a0 \'a0 \'a0 \'a0 font-size: 40px;\
+\'a0 \'a0 \'a0 \'a0 color: 424242;\
+\'a0 \'a0 \'a0 \'a0 margin-top: 40px;\
+\'a0 \'a0 \'a0 \'a0 margin-left: 40px;\
+\'a0 \'a0 \'a0 \'a0 margin-right: 40px;\
+\'a0 \'a0 \'a0 \'a0 -moz-font-feature-settings: "liga=1,kern=1";\
+\'a0 \'a0 \'a0 \'a0 -moz-font-feature-settings: "liga","kern";\
+\'a0 \'a0 \'a0 \'a0 -ms-font-feature-settings: "liga","kern";\
+\'a0 \'a0 \'a0 \'a0 -webkit-font-feature-settings: "liga","kern";\
+\'a0 \'a0 \'a0 \'a0 font-feature-settings: "liga","kern";\
+\'a0 \'a0 \'a0 \'a0-webkit-touch-callout: none;\
+\'a0 \'a0 \'a0 \'a0-webkit-user-select: none;\
+\'a0 \'a0 \'a0 \'a0-khtml-user-select: none;\
+\'a0 \'a0 \'a0 \'a0-moz-user-select: none;\
+\'a0 \'a0 \'a0 \'a0-ms-user-select: none;\
+\'a0 \'a0 \'a0 \'a0user-select: none;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 input, textarea \{\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif;\
+\'a0 \'a0 \'a0 \'a0 font-size: 18px;\
+\'a0 \'a0 \'a0 \'a0 color: 424242;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 textarea \{\
+\'a0 \'a0 \'a0 \'a0 resize: none;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 div \{\
+\'a0 \'a0 \'a0 \'a0 padding-bottom: 20px;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 svg \{\
+\'a0 \'a0 \'a0 \'a0 padding-right: 34px;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #uos, #error \{\
+\'a0 \'a0 \'a0 \'a0 color: e64626;\
+\'a0 \'a0 \'a0 \'a0 font-weight: bold;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #getinfo \{\
+\'a0 \'a0 \'a0 \'a0 font-size: 18px;\
+\'a0 \'a0 \'a0 \'a0 font-weight: bold;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #optionalinfo \{\
+\'a0 \'a0 \'a0 \'a0 font-size: 30px;\
+\'a0 \'a0 \'a0 \'a0 color: e64626;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #attrib \{\
+\'a0 \'a0 \'a0 \'a0 position: fixed;\
+\'a0 \'a0 \'a0 \'a0 bottom: 20px;\
+\'a0 \'a0 \'a0 \'a0 font-size: 16px;\
+\'a0 \'a0 \'a0 \'a0 font-weight: normal;\
+\'a0 \'a0 \'a0 \'a0 color: cacaca;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #prepare \{\
+\'a0 \'a0 \'a0 \'a0 font-size: 60px;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #exam \{\
+\'a0 \'a0 \'a0 \'a0 text-align: center;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #timer \{\
+\'a0 \'a0 \'a0 \'a0 padding-top: 20px;\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif;\
+\'a0 \'a0 \'a0 \'a0 font-size: 200px;\
+\'a0 \'a0 \'a0 \'a0 cursor: none;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #curtime, #message, #pretime \{\
+\'a0 \'a0 \'a0 \'a0 font-family: sans-serif, monospace;\
+\'a0 \'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 #control \{\
+\'a0 \'a0 \'a0 \'a0 font-size: 30px;\
+\'a0 \'a0 \'a0 \'a0 color: ebebeb\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #pause:hover \{\
+\'a0 \'a0 \'a0 \'a0 color: 424242;\
+\'a0 \'a0 \'a0 \'a0 cursor: pointer;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #less, #more \{\
+\'a0 \'a0 \'a0 \'a0 color: ebebeb;\
+\'a0 \'a0 \'a0 \'a0 font-weight:bold;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #less:hover, #more:hover \{\
+\'a0 \'a0 \'a0 \'a0 color: e64626;\
+\'a0 \'a0 \'a0 \'a0 cursor: pointer;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #addinfo \{\
+\'a0 \'a0 \'a0 \'a0 padding-top: 40px;\
+\'a0 \'a0 \'a0 \'a0 width:100%;\
+\'a0 \'a0 \'a0 \'a0 border:none;outline:none;\
+\'a0 \'a0 \'a0 \'a0 font-size:30px;\
+\'a0 \'a0 \'a0 \'a0 color:e64626;\
+\'a0 \'a0 \'a0 \'a0 text-align:left;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #pretime \{\
+\'a0 \'a0 \'a0 \'a0 font-size: 48px;\
+\'a0 \'a0 \'a0 \'a0 font-weight: normal;\
+\'a0 \'a0 \'a0 \'a0 color: cacaca;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 #control, #pretime \{\
+\'a0 \'a0 \'a0 \'a0 position: fixed;\
+\'a0 \'a0 \'a0 \'a0 left: 0;\
+\'a0 \'a0 \'a0 \'a0 right: 0;\
+\'a0 \'a0 bottom: 50px;\
+\'a0 \'a0 text-align:center;\
+\'a0 \'a0 \'a0 \'a0 display: inline-block;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 #tophead \{\
+\'a0 \'a0 padding-top: 20px;\
+\'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 </style>\
+\'a0 \'a0 <script>\
+\'a0 \'a0 \'a0 \'a0 function responsivesize() \{\
+\'a0 \'a0 \'a0 w = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);\
+\'a0 \'a0 \'a0 h = (document.documentElement.scrollHeight || window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 prefw = 1800;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 prefh = 874+document.getElementById('tophead').offsetHeight;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.body.style.zoom = Math.min(w/prefw,h/prefh);\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 </script>\
+\'a0 </head>\
+\'a0 <body onload="responsivesize()" onresize="responsivesize()" ondblclick="gofullscreen()">\
+\'a0 \'a0 \'a0 \'a0 \'a0 <!-- The real stuff starts here -->\
+\'a0 \'a0 \'a0 <div id="tophead">\
+\'a0 \'a0 \'a0 \'a0 <span id="uos">Examination Timer</span>\
+\'a0 \'a0 \'a0 \'a0 <br>\
+\'a0 \'a0 \'a0 \'a0 <span id="examtype">Examination setup page</span>\
+\'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 </div>\
+\'a0 \'a0 <div id="getinfo" style="display:block">\
+\'a0 \'a0 \'a0 <form name="examinfo">\
+\'a0 \'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 Unit(s) of Study for exam:<br><textarea cols="60" rows="3" name="uos" autofocus="autofocus" oninput="encodeURL()"></textarea>\
+\'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 Exam Venue:<br><input type="text" name="examtype" size="60" oninput="encodeURL()">\
+\'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 Reading time: <input type="text" name="readmins" size="2" oninput="encodeURL()">mins\
+\'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 Writing time: <input type="text" name="writehrs" size="2" oninput="encodeURL()">\
+\'a0 \'a0 \'a0 \'a0 \'a0 hrs <input type="text" name="writemins" size="2" oninput="encodeURL()">mins\
+\'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 Optional extra information for students:<br>\
+\'a0 \'a0 \'a0 \'a0 \'a0 <textarea name="optionalinfo" cols="60" rows="3" oninput="encodeURL()"></textarea>\
+\'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 <input type="button" id="setuptimer" value="Set up exam timer" onclick="validateinfo()">\
+\'a0 \'a0 \'a0 \'a0 <input type="button" value="Clear all" onclick="clearinfo()">\
+\'a0 \'a0 \'a0 </form>\
+\'a0 \'a0 \'a0 <span id="error"></span>\
+\'a0 \'a0 \'a0 <div id="attrib"></div>\
+\'a0 \'a0 </div>\
+\'a0 \'a0 <div id="prepare" style="display:none">\
+\'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 <b>Reading time:</b>\
+\'a0 \'a0 \'a0 \'a0 <span id="readmins"></span>\
+\'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 <p>\
+\'a0 \'a0 \'a0 \'a0 <b>Writing time:</b>\
+\'a0 \'a0 \'a0 \'a0 <span id="writehrs"></span>\
+\'a0 \'a0 \'a0 \'a0 and <span id="writemins"></span>\
+\'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 <div id="optionalinfo"></div>\
+\'a0 \'a0 \'a0 <input type="button" value="Commence exam" onclick="startreading()" autofocus="autofocus">\
+\'a0 \'a0 \'a0 <input type="button" value="Back" onclick="back()">\
+\'a0 \'a0 \'a0 <div id="pretime">Something is wrong - check if Javascript is active on your machine</div>\
+\'a0 \'a0 </div>\
+\'a0 \'a0 <div id="exam" style="display:none">\
+\'a0 \'a0 \'a0 <div id="timer"></div>\
+\'a0 \'a0 \'a0 <div id="curtime"></div>\
+\'a0 \'a0 \'a0 <div id="message"></div>\
+\'a0 \'a0 \'a0 <div id="addinfodiv"><form name="addinfoform"><textarea id="addinfo" rows="5" oninput="updateURL()"></form></textarea></div>\
+\'a0 \'a0 \'a0 <div id="control">\
+\'a0 \'a0 \'a0 \'a0 <span id="less" title="Subtract 1 minute from current timer" onclick="less()">&minus;</span>\
+\'a0 \'a0 \'a0 \'a0 <span id="pause" title="Pause / unpause timer" onclick="pauseplay()">&#10074;&#10074;</span>\
+\'a0 \'a0 \'a0 \'a0 <span id="more" title="Add 1 minute to current timer" onclick="more()">&plus;</span>\
+\'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 </div>\
+\'a0 \'a0 <script>\
+\'a0 \'a0 \'a0 var readmins = 0;\
+\'a0 \'a0 \'a0 var writehrs = 0;\
+\'a0 \'a0 \'a0 var writemins = 0;\
+\'a0 \'a0 \'a0 var target = 0;\
+\'a0 \'a0 \'a0 var paused = false;\
+\'a0 \'a0 \'a0 var tstatus = "";\
+\'a0 \'a0 \'a0 // Decode and validate URL, then prepopulate form\
+\'a0 \'a0 \'a0 var hashParams = window.location.hash.substr(1).split('&');\
+\'a0 \'a0 \'a0 for (var i = 0; i < hashParams.length; i++) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var p = hashParams[i].split('=');\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (p[0] == "uos" || p[0] == "examtype" || p[0] == "readmins" || p[0] == "writehrs" || p[0] == "writemins" || p[0] == "optionalinfo") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eval("var ff=document.examinfo." + p[0] + ";");\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 ff.value = decodeURIComponent(p[1]);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('error').innerHTML = "Exam details were pre-filled from the URL. Please check them before continuing.";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Define some basic helpers for the alarm\
+\'a0 \'a0 \'a0 function oscstop() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 osc.disconnect(audioctx.destination);\
+\'a0 \'a0 \'a0 \'a0 \'a0 oscon = false;\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (beepcount > 1) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 beepcount--;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 setTimeout(beep, beepdelay);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 function beep() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (oscon == false) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 osc.connect(audioctx.destination);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 oscon = true;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 setTimeout(oscstop, beeplength);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 function alarm(x) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 beepcount = x;\
+\'a0 \'a0 \'a0 \'a0 \'a0 beep();\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Clear all form fields\
+\'a0 \'a0 \'a0 function clearinfo() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.uos.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.examtype.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.readmins.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.writehrs.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.writemins.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.examinfo.optionalinfo.value = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('error').innerHTML = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 encodeURL();\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Validation part 1: check all fields are complete\
+\'a0 \'a0 \'a0 function validateinfo() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (document.examinfo.uos.value == "" || document.examinfo.examtype.value == "" || document.examinfo.readmins.value == "" || document.examinfo.writehrs.value == "" || document.examinfo.writemins.value == "") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('error').innerHTML = "Error: all fields must be completed. For times, enter 0 if not needed.";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 vn1();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Validation part 2: check all times are numbers\
+\'a0 \'a0 \'a0 function vn1() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 readmins = document.examinfo.readmins.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 writehrs = document.examinfo.writehrs.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 writemins = document.examinfo.writemins.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (isNaN(readmins) == true || isNaN(writehrs) == true || isNaN(writemins) == true) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('error').innerHTML = "Error: all times must be numbers";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 vn2();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Validation part 3: check all times are valid\
+\'a0 \'a0 \'a0 function vn2() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (readmins != Math.floor(Math.abs(readmins)) || writehrs != Math.floor(Math.abs(writehrs)) || writemins != Math.floor(Math.abs(writemins))) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('error').innerHTML = "Error: all times must be non-negative whole numbers";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 readytogo();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Helper function to hide and show bits of the interface\
+\'a0 \'a0 \'a0 function phase(id) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var e = document.getElementById(id);\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (e.style.display == 'none') \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 e.style.display = 'block';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 e.style.display = 'none';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Grammar helper for 1 minute / 2 minutes etc\
+\'a0 \'a0 \'a0 function pluralise(x) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (x == 1) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return "s";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Helper to get today's date as a nice text string\
+\'a0 \'a0 \'a0 function todaysdate()\{\
+\'a0 \'a0 \'a0 var d = new Date();\
+\'a0 \'a0 \'a0 var dow=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];\
+\'a0 \'a0 \'a0 var mth=["January","February","March","April","May","June","July","August","September","October","November","December"];\
+\'a0 \'a0 \'a0 return dow[d.getDay()]+" "+d.getDate()+" "+mth[d.getMonth()]+" "+d.getFullYear();\
+\'a0 \'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 function encodeURL()\{\
+\'a0 \'a0 \'a0 // Encode all exam details to URL and push it to the address bar - to be called prior to exam only\
+\'a0 \'a0 \'a0 newurl = (document.location.toString()).split("#")[0] + "#uos=" + encodeURIComponent(document.examinfo.uos.value) + "&examtype=" + encodeURIComponent(document.examinfo.examtype.value) + "&readmins=" + encodeURIComponent(document.examinfo.readmins.value) + "&writehrs=" + encodeURIComponent(document.examinfo.writehrs.value) + "&writemins=" + encodeURIComponent(document.examinfo.writemins.value) + "&optionalinfo=" + encodeURIComponent(document.examinfo.optionalinfo.value);\
+\'a0 \'a0 \'a0 window.history.pushState(\{\}, document.title, newurl);\
+\'a0 \'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 function updateURL()\{\
+\'a0 \'a0 \'a0 // Encode all exam details to URL and push it to the address bar - only call this function when details change in-exam\
+\'a0 \'a0 \'a0 \'a0 newurl = (document.location.toString()).split("#")[0] + "#uos=" + encodeURIComponent(document.examinfo.uos.value) + "&examtype=" + encodeURIComponent(document.examinfo.examtype.value) + "&readmins=" + encodeURIComponent(document.examinfo.readmins.value) + "&writehrs=" + encodeURIComponent(document.examinfo.writehrs.value) + "&writemins=" + encodeURIComponent(document.examinfo.writemins.value) + "&optionalinfo=" + encodeURIComponent(document.addinfoform.addinfo.value);\
+\'a0 \'a0 \'a0 \'a0 window.history.pushState(\{\}, document.title, newurl);\
+\'a0 \'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 function gofullscreen() \{\
+\'a0 \'a0 \'a0 \'a0 if ((document.fullScreenElement && document.fullScreenElement !== null ) || (!document.mozFullScreen && !document.webkitIsFullScreen)) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (document.documentElement.requestFullScreen) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.documentElement.requestFullScreen();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \} else if (document.documentElement.mozRequestFullScreen) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.documentElement.mozRequestFullScreen();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \} else if (document.documentElement.webkitRequestFullScreen) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 responsivesize();\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 // Advance to second screen showing exam details.\
+\'a0 \'a0 \'a0 function readytogo() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 responsivesize();\
+\'a0 \'a0 \'a0 // Normalise times greater than 60 to their proper times in hours and minutes\
+\'a0 \'a0 \'a0 \'a0 \'a0 readmins = Number(readmins);\
+\'a0 \'a0 \'a0 \'a0 \'a0 writehrs = Number(writehrs);\
+\'a0 \'a0 \'a0 \'a0 \'a0 writemins = Number(writemins);\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (writemins > 59) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 writehrs += Math.floor(writemins / 60);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 writemins = writemins % 60;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Populate the screen with exam details from form\
+\'a0 \'a0 \'a0 \'a0 \'a0 var uosval = document.examinfo.uos.value; uosval = uosval.replace(/\\r?\\n/g, '<br />');\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('uos').innerHTML = uosval;\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('examtype').innerHTML = todaysdate()+" - "+document.examinfo.examtype.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.title = document.examinfo.uos.value + " - " + document.examinfo.examtype.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('readmins').innerHTML = readmins + " minute" + pluralise(readmins);\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('writehrs').innerHTML = writehrs + " hour" + pluralise(writehrs);\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('writemins').innerHTML = writemins + " minute" + pluralise(writemins);\
+\'a0 \'a0 \'a0 \'a0 \'a0 var optinf = document.examinfo.optionalinfo.value;\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('addinfo').innerHTML = optinf;\
+\'a0 \'a0 \'a0 \'a0 \'a0 optinf = optinf.replace(/\\r?\\n/g, '<br />');\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('optionalinfo').innerHTML = optinf;\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 \'a0 \'a0 gofullscreen();\
+\'a0 \'a0 \'a0 \'a0 \'a0 responsivesize();\
+\'a0 \'a0 \'a0 \'a0 \'a0 encodeURL();\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \'a0 \'a0 \'a0 \'a0 \'a0 phase("getinfo");\
+\'a0 \'a0 \'a0 \'a0 \'a0 phase("prepare");\
+\'a0 \'a0 \'a0 \'a0 \'a0 prereading();\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Go back to exam setup page\
+\'a0 \'a0 \'a0 function back() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 phase("getinfo");\
+\'a0 \'a0 \'a0 \'a0 \'a0 phase("prepare");\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('uos').innerHTML = "Examination Timer";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('examtype').innerHTML = "Examination setup page";\
+\'a0 \'a0 \'a0 \'a0 \'a0 responsivesize();\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Start reading time\
+\'a0 \'a0 \'a0 function startreading() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Set up webAudio oscillator for alarm\
+\'a0 \'a0 \'a0 \'a0 \'a0 audioctx = new (window.AudioContext || window.webkitAudioContext)();\
+\'a0 \'a0 \'a0 \'a0 \'a0 osc = audioctx.createOscillator();\
+\'a0 \'a0 \'a0 \'a0 \'a0 oscon = false;\
+\'a0 \'a0 \'a0 \'a0 \'a0 beepcount = 0;\
+\'a0 \'a0 \'a0 \'a0 \'a0 beeplength = 40;\
+\'a0 \'a0 \'a0 \'a0 \'a0 beepdelay = 110;\
+\'a0 \'a0 \'a0 \'a0 \'a0 osc.type = 'sine';\
+\'a0 \'a0 \'a0 \'a0 \'a0 osc.frequency.value = 880;\
+\'a0 \'a0 \'a0 \'a0 \'a0 osc.start();\
+\'a0 \'a0 \'a0 \'a0 \'a0 // Prepare for reading time\
+\'a0 \'a0 \'a0 \'a0 \'a0 tstatus = "Reading";\
+\'a0 \'a0 \'a0 \'a0 \'a0 phase("prepare");\
+\'a0 \'a0 \'a0 \'a0 \'a0 phase("exam");\
+\'a0 \'a0 \'a0 window.onbeforeunload = function() \{return "";\};\
+\'a0 \'a0 \'a0 \'a0 \'a0 clearTimeout(pretick);\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (readmins == 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 startwriting();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 target = new Date().getTime() + (readmins * 60000) + 1000;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 xtimeends("Reading");\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 alarm(3);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 readingtime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Update display of the current time\
+\'a0 \'a0 \'a0 function updatecurtime() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ctime = new Date();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var eth = ctime.getHours();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var etm = ctime.getMinutes();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ets = ctime.getSeconds();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ampm = "am";\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (eth > 11) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 ampm = "pm";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = eth % 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 ;if (eth == 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (paused == false) \{document.getElementById('curtime').innerHTML = "The current time is "+ eth + ":" + (10 > etm ? "0" : "") + etm + ":" + (10 > ets ? "0" : "") + ets + ampm;\}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Update display of the current time during the pre-reading screen\
+\'a0 \'a0 \'a0 function prereading() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ctime = new Date();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var eth = ctime.getHours();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var etm = ctime.getMinutes();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ets = ctime.getSeconds();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ampm = "am";\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (eth > 11) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 ampm = "pm";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = eth % 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 ;if (eth == 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('pretime').innerHTML = "The current time is " + eth + ":" + (10 > etm ? "0" : "") + etm + ":" + (10 > ets ? "0" : "") + ets + ampm;\
+\'a0 \'a0 \'a0 \'a0 \'a0 pretick = setTimeout(prereading, 50)\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Compute and display the time at which reading or writing time ends\
+\'a0 \'a0 \'a0 function xtimeends(text) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var endtime = new Date();\
+\'a0 \'a0 \'a0 \'a0 \'a0 endtime.setTime(target);\
+\'a0 \'a0 \'a0 \'a0 \'a0 var eth = endtime.getHours();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var etm = endtime.getMinutes();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ets = endtime.getSeconds();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var ampm = "am";\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (eth > 11) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 ampm = "pm";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = eth % 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 ;if (eth == 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 eth = 12;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('message').innerHTML = text + " time ends at " + eth + ":" + (10 > etm ? "0" : "") + etm + ":" + (10 > ets ? "0" : "") + ets + ampm;\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Main reading time loop - update display with countdown timer\
+\'a0 \'a0 \'a0 function readingtime() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var now = new Date().getTime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var diff = target - now;\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (paused == true) \{diff = diff + (now - pausedat);\}\
+\'a0 \'a0 \'a0 // Timer shows red in last 1 minute of reading time\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (diff < 60000) \{document.getElementById('timer').style.color = "e64626";\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 else \{document.getElementById('timer').style.color = "424242"\}\
+\'a0 \'a0 \'a0 // When reading time is finished exit loop and start writing time\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (diff < 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 startwriting();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var mins = Math.floor(diff / 60000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 diff -= (mins * 60000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var secs = Math.floor(diff / 1000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 updatecurtime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('timer').innerHTML = "0:" + (10 > mins ? "0" : "") + mins + ":" + (10 > secs ? "0" : "") + secs;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (paused == false) \{readtick = setTimeout(readingtime, 50)\};\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Start writing time\
+\'a0 \'a0 \'a0 function startwriting() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 tstatus = "Writing";\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('curtime').style.color = "424242";\
+\'a0 \'a0 \'a0 \'a0 \'a0 target = new Date().getTime() + (writehrs * 3600000) + (writemins * 60000) + 1000;\
+\'a0 \'a0 \'a0 \'a0 \'a0 xtimeends("Writing");\
+\'a0 \'a0 \'a0 \'a0 \'a0 alarm(3);\
+\'a0 \'a0 \'a0 \'a0 \'a0 writingtime();\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Main writing time loop - update display with countdown timer\
+\'a0 \'a0 \'a0 function writingtime() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 var now = new Date().getTime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 var diff = target - now;\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (paused == true) \{diff = diff + (now - pausedat);\}\
+\'a0 \'a0 \'a0 // Timer shows red in last 10 minutes of writing time\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (diff < 600000) \{document.getElementById('timer').style.color = "e64626";\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 else \{document.getElementById('timer').style.color = "424242"\}\
+\'a0 \'a0 \'a0 // When writing time is finished exit loop and display exam finished message\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (diff < 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('message').innerHTML = "Writing time has finished. Pens and pencils down.";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 phase("control");\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 alarm(16);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 flashtimer();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var hrs = Math.floor(diff / 3600000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 diff -= (hrs * 3600000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var mins = Math.floor(diff / 60000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 diff -= (mins * 60000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var secs = Math.floor(diff / 1000);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 updatecurtime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('timer').innerHTML = hrs + ":" + (10 > mins ? "0" : "") + mins + ":" + (10 > secs ? "0" : "") + secs;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (paused == false) \{writetick = setTimeout(writingtime, 50)\};\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Helper function to flash the timer when the exam has finished\
+\'a0 \'a0 \'a0 function flashtimer() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('timer').innerHTML = "0:00:00";\
+\'a0 \'a0 \'a0 document.getElementById('curtime').innerHTML = "";\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (document.getElementById('timer').style.color == "white") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('timer').style.color = "e64626";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('timer').style.color = "white";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 setTimeout(flashtimer, 666);\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Pause or unpause the timer when the pause button is clicked\
+\'a0 \'a0 \'a0 function pauseplay() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (paused == false) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 paused = true;\
+\'a0 \'a0 \'a0 // Store the time at which the timer was paused\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 pausedat = new Date().getTime();\
+\'a0 \'a0 \'a0 // Switch the pause button to a play button\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('pause').innerHTML = "&#9654";\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('curtime').innerHTML = "&nbsp;"\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('message').innerHTML = tstatus + " time paused";\
+\'a0 \'a0 \'a0 // Actually stop the relevant timer\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 clearTimeout(readtick);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 clearTimeout(writetick);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 alarm(2);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 paused = false;\
+\'a0 \'a0 \'a0 // Switch the play button to a pause button again\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 document.getElementById('pause').innerHTML = "&#10074;&#10074;";\
+\'a0 \'a0 \'a0 // Compute the new reading/writing end time and update timer accordingly\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var now = new Date().getTime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var diff = now - pausedat;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 target += diff;\
+\'a0 \'a0 \'a0 // Return to either reading or writing time as before\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 xtimeends("Reading");\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 readingtime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 xtimeends("Writing");\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 writingtime();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 alarm(3);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Add 1 minute\
+\'a0 \'a0 \'a0 function more() \{\
+\'a0 \'a0 \'a0 target = target + 60000;\
+\'a0 \'a0 \'a0 if (paused == false) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{xtimeends("Reading");\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{xtimeends("Writing");\}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 else \{\
+\'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{readingtime();\}\
+\'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{writingtime();\}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 alarm(1);\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 // Subtract 1 minute - this is a little bit complicated because of the way pausing works. Needs refactoring.\
+\'a0 \'a0 \'a0 function less() \{\
+\'a0 \'a0 \'a0 if (paused == false) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 target = target - 60000;\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{xtimeends("Reading");\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{xtimeends("Writing");\}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 else \{\
+\'a0 \'a0 \'a0 \'a0 var now = new Date().getTime();\
+\'a0 \'a0 \'a0 \'a0 var sincepaused = now - pausedat;\
+\'a0 \'a0 \'a0 \'a0 var diff = target - now;\
+\'a0 \'a0 \'a0 \'a0 if (diff < (60000 - sincepaused)) \{target = target - diff - sincepaused;\}\
+\'a0 \'a0 \'a0 \'a0 else \{target = target - 60000;\}\
+\'a0 \'a0 \'a0 \'a0 if (tstatus == "Reading") \{readingtime();\}\
+\'a0 \'a0 \'a0 \'a0 if (tstatus == "Writing") \{writingtime();\}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 alarm(1);\
+\'a0 \'a0 \'a0 \}\
+\'a0 \'a0 </script>\
+\'a0 </body>\
+</html>\
+}
